@@ -21,11 +21,15 @@
 		<struts.version>1.3.10</struts.version>
 
 		<!-- Ideally, you don't want to generate code in the main source tree, 
-			however, the liberty plugin doesn't seem to support setting multiple source 
-			directories for the deployment setup (yet?) and thus we need to keep our 
+			however, the
+		liberty plugin doesn't seem to support setting multiple source 
+			directories for the
+		deployment setup (yet?) and thus we need to keep our 
 			files there . -->
-		<!-- xdoclet.web.dest.dir>${project.build.directory}/m2e-wtp/web-resources/WEB-INF</xdoclet.web.dest.dir -->
-		<!-- xdoclet.web.dest.dir>${project.build.directory}/${artifactId}-${version}/WEB-INF</xdoclet.web.dest.dir -->
+		<!--
+		xdoclet.web.dest.dir>${project.build.directory}/m2e-wtp/web-resources/WEB-INF</xdoclet.web.dest.dir -->
+		<!--
+		xdoclet.web.dest.dir>${project.build.directory}/${artifactId}-${version}/WEB-INF</xdoclet.web.dest.dir -->
 		<xdoclet.web.dest.dir>${project.basedir}/src/main/webapp/WEB-INF</xdoclet.web.dest.dir>
 	</properties>
 	<!-- ================================================ -->
@@ -42,11 +46,6 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>io.github.learnjakartaee</groupId>
-			<artifactId>learn-jakartaee-ejb</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 		<dependency>
 			<groupId>jakarta.platform</groupId>
 			<artifactId>jakarta.jakartaee-web-api</artifactId>
@@ -97,9 +96,10 @@
 						</goals>
 						<configuration>
 							<tasks>
-								<!-- http://xdoclet.sourceforge.net/xdoclet/ant/xdoclet/modules/web/WebDocletTask.html 
-									http://xdoclet.sourceforge.net/xdoclet/ant/xdoclet/modules/apache/struts/StrutsConfigXmlSubTask.html 
-									http://xdoclet.sourceforge.net/xdoclet/ant/xdoclet/modules/apache/struts/StrutsValidationXmlSubTask.html -->
+								<!--
+								http://xdoclet.sourceforge.net/xdoclet/ant/xdoclet/modules/web/WebDocletTask.html
+								http://xdoclet.sourceforge.net/xdoclet/ant/xdoclet/modules/apache/struts/StrutsConfigXmlSubTask.html
+								http://xdoclet.sourceforge.net/xdoclet/ant/xdoclet/modules/apache/struts/StrutsValidationXmlSubTask.html -->
 								<webdoclet destdir="${xdoclet.web.dest.dir}"
 									force="true" verbose="true">
 									<strutsconfigxml version="1.2"
@@ -152,7 +152,8 @@
 					<deployables>
 						<deployable>
 							<!-- Use version built by transformer -->
-							<location>${project.build.directory}/${project.artifactId}-jakartaee9-${project.version}.war</location>
+							<location>
+								${project.build.directory}/${project.artifactId}-jakartaee9-${project.version}.war</location>
 						</deployable>
 					</deployables>
 				</configuration>
